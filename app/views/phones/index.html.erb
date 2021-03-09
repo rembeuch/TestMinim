@@ -1,0 +1,20 @@
+<div class="container">
+  <%= link_to 'créer un téléphone', new_phone_path, class: 'btn btn-warning m-4' %>
+    <% @phones.sort_by(&:created_at).reverse.each do |phone| %>
+      <div class="card mb-4">
+        <%= link_to phone_path(phone), class: "text-center" do %>
+          <h4 class="text-center m-2">
+            Nom: <%= phone.name %> <br>
+            Marque: <%= phone.brand %> <br>
+            Couleur: <%= phone.color %> <br>
+            IMEI: <%= phone.imei %> <br>
+            Capacité: <%= phone.capacity %> <br>
+
+
+          </h4>
+        <% end %>
+        <%= link_to 'Edit', edit_phone_path(phone), class: "btn btn-warning" %>
+        <%= button_to "Destroy", phone, method: :delete, data: { confirm: "Êtes-vous sur?"} %>
+      </div>
+    <% end %>
+</div>

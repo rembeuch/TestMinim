@@ -1,0 +1,12 @@
+<h2 class="text-center m-2">
+  Nom:<%= @phone.name %> <br>
+  Marque: <%= @phone.brand %> <br>
+  Couleur: <%= @phone.color %> <br>
+  IMEI: <%= @phone.imei %> <br>
+  Capacité: <%= @phone.capacity %> <br>
+
+</h2>
+
+<%= link_to 'Edit', edit_phone_path(@phone), class: "btn btn-warning" %>
+
+<%= link_to 'Retour', phones_path %>

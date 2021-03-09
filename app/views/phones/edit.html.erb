@@ -1,0 +1,16 @@
+<h1>éditer le téléphone</h1>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="form-inputs">
+      <%= simple_form_for [@phone] do |f| %>
+      <%= f.input :name, label: 'Nom', required: true %>
+      <%= f.input :brand, label: 'Marque' %>
+      <%= f.input :color,:collection => Phone::COLORS, label: 'Couleur' %>
+      <%= f.input :imei, label: 'IMEI' %>
+      <%= f.input :capacity,:collection => Phone::CAPACITY, label: 'Capacité' %>
+
+      <%= f.button :submit, "Valider", class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<% end %>
